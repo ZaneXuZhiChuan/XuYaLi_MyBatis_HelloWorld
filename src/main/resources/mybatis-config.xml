@@ -15,6 +15,12 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="mybatis/mapper/EmployeeMapper.xml"/>
+        <!--通过xml配置文件配置生成映射-->
+        <!--<mapper resource="mybatis/mapper/EmployeeMapper.xml"/>-->
+
+        <!--通过注册接口生成映射，要求xml映射文件与EmployeeMapper要在同一个文件目录下-->
+        <mapper class="com.atguigu.dao.EmployeeMapper"/>
+
+        <mapper class="com.atguigu.dao.EmployeeMapperAnnotation"/>
     </mappers>
 </configuration>
