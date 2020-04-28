@@ -15,6 +15,6 @@
         </environment>
     </environments>
     <mappers>
-        <mapper resource="EmployeeMapper.xml"/>
+        <mapper resource="mybatis/mapper/EmployeeMapper.xml"/>
     </mappers>
 </configuration>

@@ -2,7 +2,7 @@ package com.atguigu.mybatis;
 
 public class Employee {
     private Integer id;
-    private String last_Name;
+    private String lastName;
     private String email;
     private String gender;
 
@@ -10,7 +10,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", last_Name='" + last_Name + '\'' +
+                ", last_Name='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
@@ -25,11 +25,11 @@ public class Employee {
     }
 
     public String getLast_Name() {
-        return last_Name;
+        return lastName;
     }
 
     public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+        this.lastName = last_Name;
     }
 
     public String getEmail() {
