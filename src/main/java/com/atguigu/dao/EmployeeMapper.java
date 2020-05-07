@@ -6,4 +6,5 @@ public interface EmployeeMapper {
 
     Employee getEmpById(Integer id);
 
+    int insertEmp(Employee employee);
 }

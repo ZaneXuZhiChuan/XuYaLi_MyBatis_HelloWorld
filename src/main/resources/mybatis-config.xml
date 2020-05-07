@@ -6,6 +6,9 @@
     <properties resource="config.properties">
         <property name="org.apache.ibatis.parsing.PropertyParser.enable-default-value" value="true"/> <!-- 启用默认值特性 -->
     </properties>
+    <typeAliases>
+        <typeAlias type="com.atguigu.dao.EmployeeMapper" alias="EmployeeMapper"></typeAlias>
+    </typeAliases>
     <environments default="development">
         <environment id="development">
             <transactionManager type="JDBC"/>

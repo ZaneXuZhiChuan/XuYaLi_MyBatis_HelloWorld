@@ -41,9 +41,26 @@ public class MyBatisTest {
 
     @Test
     public void employeeMapperAnnotation() throws IOException{
-        StringBuffer abc = new StringBuffer("abc");
-        abc.append("dsdefafx");
         System.out.println(getSqlSessionFactory().openSession().getMapper(EmployeeMapperAnnotation.class).getEmpById(1));
     }
 
+    @Test
+    public void insertEmpTest()throws IOException{
+//        当我们不给JavaBean中的ID赋值时候可以通过在mapper.xml文件中设置useGeneratedKeys="true"
+//        和keyProperty="id"来获取数据库中自增主键的值
+        Employee zhouJianPing02 = new Employee(
+//                null,
+                "ZhouJianPing05",
+                "ZhouJianPing@gmail05.com",
+                "1"
+        );
+        SqlSession sqlSession = getSqlSessionFactory().openSession();
+        int i = sqlSession.getMapper(EmployeeMapper.class).insertEmp(
+                zhouJianPing02);
+        System.out.println("Before commit:"+zhouJianPing02.getId());
+        sqlSession.commit();
+        System.out.println("After commit:"+zhouJianPing02.getId());
+        sqlSession.close();
+        System.out.println("Close:"+zhouJianPing02.getId());
+    }
 }
