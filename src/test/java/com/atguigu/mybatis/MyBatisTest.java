@@ -10,6 +10,8 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MyBatisTest {
 
@@ -31,12 +33,16 @@ public class MyBatisTest {
     @Test
     public void employeeMapperTest() throws IOException {
         SqlSession sqlSession = getSqlSessionFactory().openSession();
-        System.out.println(sqlSession.getMapper(EmployeeMapper.class).getEmpById(1));
+        EmployeeMapper employeeMapper = sqlSession.getMapper(EmployeeMapper.class);
+        Employee employee = employeeMapper.getEmpById(1);
+        System.out.println(employee);
         sqlSession.close();
     }
 
     @Test
     public void employeeMapperAnnotation() throws IOException{
+        StringBuffer abc = new StringBuffer("abc");
+        abc.append("dsdefafx");
         System.out.println(getSqlSessionFactory().openSession().getMapper(EmployeeMapperAnnotation.class).getEmpById(1));
     }
 
